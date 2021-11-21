@@ -5,9 +5,9 @@ from flask import Flask, request
 app = Flask(_name_)
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route("/", methods=["GET", "POST"])
 def index():
-    if request.method == 'GET':
+    if request.method == "GET":
         # show html form
         return '''
             <form method="post">
@@ -15,9 +15,9 @@ def index():
                 <input type="submit" value="Calculate" />
             </form>
         '''
-    elif request.method == 'POST':
+    elif request.method == "POST":
         # calculate result
-        expression = request.form.get('expression')
+        expression = request.form.get("expression")
         result = eval(expression)
         return 'result: %s' % result
 
